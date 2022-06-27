@@ -13,3 +13,6 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocola
 choco upgrade chocolatey -y
 choco install git -y
 cmd.exe /c git clone https://github.com/atomic-gong/dynamic-world.git
+
+Copy-Item -Path ".\dynamic-world\mods\*" -Destination ($env:APPDATA + "\.minecraft\mods") -Recurse
+Remove-Item -Recurse -Force ".\dynamic-world"
